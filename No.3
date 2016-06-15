@@ -1,0 +1,75 @@
+#include <iostream>
+#include<iomanip>
+#include <cstdlib>>
+
+using namespace std;
+
+//Inisialisasi Variabel Matriks A,B,C
+int A[3][3];
+
+
+//Fungsi Input Matriks A
+void isiA ()
+{
+cout <<"Masukkan Nilai Matriks A :"<<endl;
+for(int i=0; i<3; i++)
+{
+for(int j=0; j<3; j++)
+{
+cout<<"A "<<"["<<i+1<<"] ["<<j+1<<"] = ";
+cin >>A[i][j];
+}
+cout <<endl;
+}
+}
+
+
+void TampilA()
+{
+cout <<"Matriks A : "<<endl;
+for(int i=0; i<3; i++)
+{
+for(int j=0; j<3; j++)
+{
+cout<<setw(4)<<"["<<A[i][j]<<"]";
+
+}
+cout <<endl;
+}
+cout <<endl;
+}
+
+void Tampil()
+{
+int total=0;
+int terbesar=-99999999;
+int terkecil=99999;
+
+for(int i=0; i<3; i++)
+{
+for(int j=0; j<3; j++)
+{
+total=total+A[i][j];
+if(terbesar<A[i][j]){
+    terbesar=A[i][j];
+}
+if(terkecil>A[i][j]){
+    terkecil=A[i][j];
+}
+cout<<setw(3)<<"["<<A[i][j]<<"]";
+
+}
+cout <<endl<<endl;
+}
+cout<<"Total    = "<<total<<endl<<endl;
+cout<<"Nilai Terbesar adalah = "<<terbesar<<endl;
+cout<<"Nilai Terkecil adalah = "<<terkecil<<endl;
+cout <<endl;
+}
+int main ()
+{
+isiA();
+system("cls");
+Tampil();
+return 0;
+}
